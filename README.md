@@ -1,129 +1,148 @@
-# ESP32 Raspberry Pi Sensor Tree Project
+<div align="center">
 
-![C++](https://img.shields.io/badge/C++-Arduino-blue)
-![Python](https://img.shields.io/badge/Python-Flask-yellow)
-![HTML](https://img.shields.io/badge/HTML-Frontend-orange)
-![CSS](https://img.shields.io/badge/CSS-Styling-blueviolet)
-![JavaScript](https://img.shields.io/badge/JavaScript-Dashboard-brightgreen)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-Server-red)
-![ESP32](https://img.shields.io/badge/ESP32-Wireless%20Nodes-black)
-![License](https://img.shields.io/badge/license-Educational-green)
+# 🌐 ESP32 Raspberry Pi Sensor Tree Project
 
----
+### Wireless ESP32 Sensor Network with Raspberry Pi Dashboard
 
-## Table of Contents
+![C++](https://img.shields.io/badge/C++-Arduino-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Python](https://img.shields.io/badge/Python-Flask-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-Frontend-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-Styling-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Dashboard-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-Server-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-Wireless%20Nodes-black?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)
 
-- [Overview](#overview)
-- [Project Description](#project-description)
-- [Languages Used](#languages-used)
-- [Features](#features)
-- [System Architecture](#system-architecture)
-- [How It Works](#how-it-works)
-- [Project Structure](#project-structure)
-- [Arduino Node Logic](#arduino-node-logic)
-- [Raspberry Pi Server](#raspberry-pi-server)
-- [Dashboard Pages](#dashboard-pages)
-- [Network Flow](#network-flow)
-- [Future Improvements](#future-improvements)
-- [Credits](#credits)
+</div>
 
 ---
 
-## Overview
+## 📌 Overview
 
-The **ESP32 Raspberry Pi Sensor Tree Project** is a wireless IoT sensor network where multiple ESP32 devices connect together in a parent-child tree structure and send sensor data to a Raspberry Pi server.
+The **ESP32 Raspberry Pi Sensor Tree Project** is a wireless IoT sensor network where multiple ESP32 devices connect together using a parent-child tree structure and send sensor data to a Raspberry Pi server.
 
-The Raspberry Pi runs a Flask web dashboard that displays the active nodes, their parents, signal strength, temperature, children, and live tree structure.
+The Raspberry Pi runs a **Python Flask web dashboard** that displays active nodes, parent nodes, signal strength, temperature values, children, and the live network tree.
+
+This project combines **embedded systems**, **wireless networking**, **web development**, **Linux server management**, and **IoT dashboard design**.
 
 ---
 
-## Project Description
+## 🧠 Project Description
 
 This project demonstrates a wireless sensor-tree network using ESP32 nodes and a Raspberry Pi Flask server.
 
 Each ESP32 can act as a node in the network. A node can connect directly to the Raspberry Pi WiFi network or connect through another ESP32 node. This creates a flexible tree-like topology where data can travel from child nodes to parent nodes and finally to the Raspberry Pi dashboard.
 
----
-
-## Languages Used
-
-| Language | Usage |
-|---|---|
-| **C++ / Arduino** | ESP32 node firmware, WiFi logic, HTTP communication, sensor handling |
-| **Python** | Flask backend server running on the Raspberry Pi |
-| **HTML** | Web dashboard pages |
-| **CSS** | Dashboard styling and layout |
-| **JavaScript** | Live table updates, tree rendering, API fetching |
-| **JSON** | Data exchange between ESP32 nodes and the Raspberry Pi server |
-| **Bash / Linux Commands** | Running, copying, deploying, and managing the project on Raspberry Pi |
-
----
-
-## Features
-
-### Core Features
-
-- ESP32 wireless node system
-- Raspberry Pi Flask server
-- Live web dashboard
-- Active node table
-- Tree view of parent-child relationships
-- Automatic node registration
-- Unique node naming
-- Parent and child communication
-- RSSI signal strength monitoring
-- Temperature value support
-- Node timeout and automatic removal
-- JSON-based communication
-- Simple modular project structure
-
-### Dashboard Features
-
-- Shows active nodes
-- Shows each node parent
-- Shows RSSI value
-- Shows temperature value
-- Shows child nodes
-- Shows last seen time
-- Displays the full sensor tree
-- Updates data without manually refreshing the page
-
----
-
-## System Architecture
-
-The project follows a simple IoT tree architecture:
+The system is designed so that ESP32 nodes can form a simple wireless hierarchy:
 
 ```text
-ESP32 Child Node
-        ↓
-ESP32 Parent Node
-        ↓
-Raspberry Pi Flask Server
-        ↓
-Web Dashboard
+Child Node → Parent Node → Raspberry Pi Server → Web Dashboard
 ```
 
-The Raspberry Pi acts as the main server. ESP32 nodes send heartbeat data to the server or to another ESP32 parent node.
+---
+
+## 🛠️ Languages and Technologies Used
+
+| Language / Technology | Usage |
+|---|---|
+| **C++ / Arduino** | ESP32 firmware, WiFi connection logic, HTTP communication, node server, heartbeat system |
+| **Python** | Flask backend server running on the Raspberry Pi |
+| **HTML** | Web dashboard page structure |
+| **CSS** | Dashboard styling, layout, buttons, tables, and visual design |
+| **JavaScript** | Live data fetching, table updates, and tree rendering |
+| **JSON** | Data format used between ESP32 nodes and the Raspberry Pi server |
+| **Bash / Linux Commands** | Running, copying, deploying, and managing the project on Raspberry Pi |
+| **Git / GitHub** | Version control and project hosting |
 
 ---
 
-## How It Works
+## ✨ Main Features
 
-1. The Raspberry Pi runs the Flask server.
-2. The ESP32 starts and searches for a parent.
-3. If the Raspberry Pi network is available, the ESP32 can connect to it.
-4. If the Raspberry Pi network is weak or unavailable, the ESP32 searches for another ESP32 node.
-5. The node connects to the strongest available parent.
-6. The node requests or receives a unique node ID.
-7. The node sends heartbeat data.
-8. Parent nodes forward child information.
-9. The Raspberry Pi stores the latest node data.
-10. The dashboard displays the network as a table and as a tree.
+### 🔌 ESP32 Node Features
+
+- Wireless ESP32 node system
+- Parent-child node communication
+- Automatic node registration
+- Unique node naming
+- RSSI signal strength monitoring
+- Temperature value support
+- Heartbeat system
+- Child data forwarding
+- Local ESP32 access point support
+- Parent status check before sending child data
+- Modular Arduino/C++ file structure
+
+### 🖥️ Raspberry Pi Server Features
+
+- Python Flask backend server
+- Receives heartbeat data from nodes
+- Stores active node information
+- Removes offline nodes automatically
+- Provides JSON API routes
+- Serves the dashboard pages
+- Displays the live sensor network state
+
+### 🌐 Dashboard Features
+
+- Home page with navigation
+- Active nodes table
+- Parent node display
+- RSSI display
+- Temperature display
+- Children display
+- Last seen time
+- Tree view of the network
+- Live updates without manually refreshing the page
 
 ---
 
-## Project Structure
+## 🏗️ System Architecture
+
+```text
+┌─────────────────────┐
+│   ESP32 Child Node  │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  ESP32 Parent Node  │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Raspberry Pi Server │
+│   Python + Flask    │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│    Web Dashboard    │
+│ HTML / CSS / JS     │
+└─────────────────────┘
+```
+
+The Raspberry Pi acts as the main server. ESP32 nodes send heartbeat data either directly to the Raspberry Pi or through another ESP32 parent node.
+
+---
+
+## 🔄 How It Works
+
+1. The Raspberry Pi starts the Flask server.
+2. The ESP32 boots and starts its setup logic.
+3. The ESP32 searches for a parent connection.
+4. If the Raspberry Pi network is available and strong enough, the ESP32 can connect directly to it.
+5. If the Raspberry Pi network is weak or unavailable, the ESP32 searches for another ESP32 node.
+6. The node connects to the best available parent.
+7. The node requests or receives a unique node ID.
+8. The node starts sending heartbeat data.
+9. Parent nodes receive data from child nodes.
+10. Parent nodes forward child information upward.
+11. The Raspberry Pi stores the latest node data.
+12. The dashboard displays the network as a table and as a tree.
+
+---
+
+## 📁 Project Structure
 
 ```text
 esp32-rpi-sensor-network/
@@ -160,11 +179,11 @@ esp32-rpi-sensor-network/
 
 ---
 
-## Arduino Node Logic
+## 📡 Arduino Node Logic
 
 The ESP32 firmware is written in **C++ using the Arduino framework**.
 
-The code is split into multiple files to keep the project clean and easy to understand.
+The code is split into multiple files so the project is cleaner, easier to debug, and easier to expand.
 
 ### Main Node Responsibilities
 
@@ -179,7 +198,7 @@ The code is split into multiple files to keep the project clean and easy to unde
 - Forward child information to the parent
 - Keep track of connected children
 
-### Setup and Loop
+### Setup and Loop Structure
 
 The main `.ino` file stays simple:
 
@@ -203,7 +222,26 @@ This makes the project easier to expand later with sensors, extra logic, or new 
 
 ---
 
-## Raspberry Pi Server
+## 🧩 Important Arduino Files
+
+| File | Purpose |
+|---|---|
+| `esp_node.ino` | Main Arduino entry file with `setup()` and `loop()` |
+| `Config_And_State.h` | Global variables, configuration, includes, and function declarations |
+| `01_Json_Helpers.cpp` | Helper functions for JSON parsing and text cleanup |
+| `02_Child_Storage.cpp` | Stores and updates child node data |
+| `03_Tree_Builder.cpp` | Builds JSON tree data |
+| `04_Parent_Status.cpp` | Checks if the parent node is busy |
+| `05_Node_Id.cpp` | Handles unique node ID requests |
+| `06_Node_Server.cpp` | Runs the ESP32 web server endpoints |
+| `07_WiFi_Connection.cpp` | Handles WiFi scanning and parent connection |
+| `08_Heartbeat.cpp` | Sends heartbeat data and child data |
+| `09_Main_Node_Logic.cpp` | Main node connection and runtime logic |
+| `10_Node_Setup_And_Loop.cpp` | Node setup and loop functions |
+
+---
+
+## 🖥️ Raspberry Pi Server
 
 The Raspberry Pi runs a **Python Flask server**.
 
@@ -227,7 +265,7 @@ ESP32 Node → HTTP POST /heartbeat → Flask Server → Dashboard API → Brows
 
 ---
 
-## Dashboard Pages
+## 🌍 Dashboard Pages
 
 The web dashboard is built using:
 
@@ -271,7 +309,7 @@ These routes return live JSON data for the frontend JavaScript code.
 
 ---
 
-## Network Flow
+## 🌳 Example Network Flow
 
 ```text
 Raspberry Pi
@@ -290,7 +328,7 @@ This allows the system to build a live tree of the whole wireless sensor network
 
 ---
 
-## Example Node Data
+## 📦 Example Node Data
 
 ```json
 {
@@ -305,7 +343,7 @@ This allows the system to build a live tree of the whole wireless sensor network
 
 ---
 
-## RSSI Signal Strength
+## 📶 RSSI Signal Strength
 
 RSSI shows the WiFi signal strength.
 
@@ -328,7 +366,63 @@ For example:
 
 ---
 
-## Future Improvements
+## 🚀 How to Run the Raspberry Pi Server
+
+Go to the server folder:
+
+```bash
+cd ~/sensor_tree_server
+```
+
+Run the Flask server:
+
+```bash
+python3 server.py
+```
+
+If the server uses port `80`, run it with sudo:
+
+```bash
+sudo python3 server.py
+```
+
+Then open the dashboard in a browser:
+
+```text
+http://192.168.1.100
+```
+
+---
+
+## 📤 GitHub Upload Commands
+
+From the main project folder:
+
+```bash
+cd ~/Downloads/esp32-rpi-sensor-network
+```
+
+Add the files:
+
+```bash
+git add arduino server README.md
+```
+
+Commit the changes:
+
+```bash
+git commit -m "Update ESP32 Raspberry Pi sensor tree project"
+```
+
+Push to GitHub:
+
+```bash
+git push origin main
+```
+
+---
+
+## 💡 Future Improvements
 
 Possible improvements for the project:
 
@@ -345,18 +439,34 @@ Possible improvements for the project:
 - Add export to CSV or JSON
 - Add node location names
 - Add alerts when a node goes offline
+- Add dashboard settings page
+- Add signal quality color indicators
+- Add node uptime
+- Add automatic Raspberry Pi startup service
+- Add historical logs for node connections
 
 ---
 
-## Educational Purpose
+## 🎓 Educational Purpose
 
 This project was created for learning and demonstration purposes.
 
-It combines embedded systems, wireless networking, web development, Linux server management, and IoT dashboard design.
+It combines:
+
+- Embedded systems
+- ESP32 WiFi networking
+- Raspberry Pi server deployment
+- Flask backend development
+- Frontend dashboard design
+- REST API communication
+- JSON data handling
+- Linux command-line usage
+- IoT system architecture
+- Parent-child network topology
 
 ---
 
-## Skills Demonstrated
+## 🧠 Skills Demonstrated
 
 - Embedded systems programming
 - ESP32 WiFi networking
@@ -368,12 +478,14 @@ It combines embedded systems, wireless networking, web development, Linux server
 - Frontend dashboard development
 - HTML/CSS/JavaScript
 - Linux command-line usage
+- Git and GitHub usage
 - IoT system architecture
 - Parent-child network topology
+- Modular code organization
 
 ---
 
-## Credits
+## 👨‍💻 Credits
 
 Developed as an educational IoT project using:
 
@@ -385,6 +497,14 @@ Developed as an educational IoT project using:
 
 ---
 
-## License
+## 📄 License
 
 This project is for educational use.
+
+<div align="center">
+
+---
+
+### ⭐ ESP32 + Raspberry Pi + Flask + IoT Dashboard
+
+</div>

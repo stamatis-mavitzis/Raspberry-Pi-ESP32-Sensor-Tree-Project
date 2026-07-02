@@ -186,23 +186,29 @@ This allows nodes that cannot directly reach the Raspberry Pi to still send data
 
 ## Project Structure
 
+The project is separated into two main root folders:
+
+- `nodes/` contains the ESP32 Arduino firmware.
+- `server/` contains the Raspberry Pi Flask server and dashboard.
+
+The Arduino code is not inside the server folder. The server and the ESP32 node firmware are separate parts of the same project.
+
 ```text
-esp32-rpi-sensor-network/
+Raspberry-Pi-ESP32-Sensor-Tree-Project/
 │
-├── arduino/
-│   └── esp_node/
-│       ├── esp_node.ino
-│       ├── Config_And_State.h
-│       ├── 01_Json_Helpers.cpp
-│       ├── 02_Child_Storage.cpp
-│       ├── 03_Tree_Builder.cpp
-│       ├── 04_Parent_Status.cpp
-│       ├── 05_Node_Id.cpp
-│       ├── 06_Node_Server.cpp
-│       ├── 07_WiFi_Connection.cpp
-│       ├── 08_Heartbeat.cpp
-│       ├── 09_Main_Node_Logic.cpp
-│       └── 10_Node_Setup_And_Loop.cpp
+├── nodes/
+│   ├── esp_node.ino
+│   ├── Config_And_State.h
+│   ├── 01_Json_Helpers.cpp
+│   ├── 02_Child_Storage.cpp
+│   ├── 03_Tree_Builder.cpp
+│   ├── 04_Parent_Status.cpp
+│   ├── 05_Node_Id.cpp
+│   ├── 06_Node_Server.cpp
+│   ├── 07_WiFi_Connection.cpp
+│   ├── 08_Heartbeat.cpp
+│   ├── 09_Main_Node_Logic.cpp
+│   └── 10_Node_Setup_And_Loop.cpp
 │
 ├── server/
 │   ├── server.py
@@ -932,13 +938,13 @@ http://192.168.1.100
 5. Select the correct USB port.
 6. Upload the code.
 
-The main file should be:
+The main file is inside the `nodes/` folder:
 
 ```text
-esp_node.ino
+nodes/esp_node.ino
 ```
 
-The other `.cpp` files must be in the same Arduino sketch folder so the Arduino IDE can compile them together.
+The other `.cpp` and `.h` files must stay inside the same `nodes/` folder so the Arduino IDE can compile them together.
 
 ---
 
@@ -947,13 +953,13 @@ The other `.cpp` files must be in the same Arduino sketch folder so the Arduino 
 From the main project folder:
 
 ```bash
-cd ~/Downloads/esp32-rpi-sensor-network
+cd ~/Downloads/delme
 ```
 
 Add the important project files:
 
 ```bash
-git add arduino server README.md
+git add nodes server README.md
 ```
 
 Commit:
@@ -979,7 +985,7 @@ This means you are not inside the GitHub project folder.
 Go to the folder that contains `.git`:
 
 ```bash
-cd ~/Downloads/esp32-rpi-sensor-network
+cd ~/Downloads/delme
 ```
 
 Check:
@@ -1035,7 +1041,7 @@ Make sure the header file is inside the same Arduino sketch folder.
 Example:
 
 ```text
-esp_node/
+nodes/
 ├── esp_node.ino
 ├── Config_And_State.h
 └── other files...

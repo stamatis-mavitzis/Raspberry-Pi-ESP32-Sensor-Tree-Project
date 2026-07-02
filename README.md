@@ -505,6 +505,6 @@ This project is for educational use.
 
 ---
 
-### ⭐ ESP32 + Raspberry Pi + Flask + IoT Dashboard
+### ESP32 + Raspberry Pi + Flask + IoT Dashboard
 
 </div>

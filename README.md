@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 ESP32 Raspberry Pi Sensor Tree Project
+# ESP32 Raspberry Pi Sensor Tree Project
 
 ### Wireless ESP32 Sensor Network with Raspberry Pi Dashboard
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 The **ESP32 Raspberry Pi Sensor Tree Project** is a wireless IoT sensor network where multiple ESP32 devices connect together using a parent-child tree structure and send sensor data to a Raspberry Pi server.
 
@@ -27,7 +27,7 @@ This project combines **embedded systems**, **wireless networking**, **web devel
 
 ---
 
-## 🧠 Project Description
+## Project Description
 
 This project demonstrates a wireless sensor-tree network using ESP32 nodes and a Raspberry Pi Flask server.
 
@@ -41,7 +41,7 @@ Child Node → Parent Node → Raspberry Pi Server → Web Dashboard
 
 ---
 
-## 🛠️ Languages and Technologies Used
+## ️ Languages and Technologies Used
 
 | Language / Technology | Usage |
 |---|---|
@@ -56,9 +56,9 @@ Child Node → Parent Node → Raspberry Pi Server → Web Dashboard
 
 ---
 
-## ✨ Main Features
+## Main Features
 
-### 🔌 ESP32 Node Features
+### ESP32 Node Features
 
 - Wireless ESP32 node system
 - Parent-child node communication
@@ -72,7 +72,7 @@ Child Node → Parent Node → Raspberry Pi Server → Web Dashboard
 - Parent status check before sending child data
 - Modular Arduino/C++ file structure
 
-### 🖥️ Raspberry Pi Server Features
+### ️ Raspberry Pi Server Features
 
 - Python Flask backend server
 - Receives heartbeat data from nodes
@@ -82,7 +82,7 @@ Child Node → Parent Node → Raspberry Pi Server → Web Dashboard
 - Serves the dashboard pages
 - Displays the live sensor network state
 
-### 🌐 Dashboard Features
+### Dashboard Features
 
 - Home page with navigation
 - Active nodes table
@@ -96,7 +96,7 @@ Child Node → Parent Node → Raspberry Pi Server → Web Dashboard
 
 ---
 
-## 🏗️ System Architecture
+## ️ System Architecture
 
 ```text
 ┌─────────────────────┐
@@ -125,7 +125,7 @@ The Raspberry Pi acts as the main server. ESP32 nodes send heartbeat data either
 
 ---
 
-## 🔄 How It Works
+## How It Works
 
 1. The Raspberry Pi starts the Flask server.
 2. The ESP32 boots and starts its setup logic.
@@ -142,7 +142,7 @@ The Raspberry Pi acts as the main server. ESP32 nodes send heartbeat data either
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 esp32-rpi-sensor-network/
@@ -179,7 +179,7 @@ esp32-rpi-sensor-network/
 
 ---
 
-## 📡 Arduino Node Logic
+## Arduino Node Logic
 
 The ESP32 firmware is written in **C++ using the Arduino framework**.
 
@@ -222,7 +222,7 @@ This makes the project easier to expand later with sensors, extra logic, or new 
 
 ---
 
-## 🧩 Important Arduino Files
+## Important Arduino Files
 
 | File | Purpose |
 |---|---|
@@ -241,7 +241,7 @@ This makes the project easier to expand later with sensors, extra logic, or new 
 
 ---
 
-## 🖥️ Raspberry Pi Server
+## ️ Raspberry Pi Server
 
 The Raspberry Pi runs a **Python Flask server**.
 
@@ -265,7 +265,7 @@ ESP32 Node → HTTP POST /heartbeat → Flask Server → Dashboard API → Brows
 
 ---
 
-## 🌍 Dashboard Pages
+## Dashboard Pages
 
 The web dashboard is built using:
 
@@ -309,7 +309,7 @@ These routes return live JSON data for the frontend JavaScript code.
 
 ---
 
-## 🌳 Example Network Flow
+## Example Network Flow
 
 ```text
 Raspberry Pi
@@ -328,7 +328,7 @@ This allows the system to build a live tree of the whole wireless sensor network
 
 ---
 
-## 📦 Example Node Data
+## Example Node Data
 
 ```json
 {
@@ -343,7 +343,7 @@ This allows the system to build a live tree of the whole wireless sensor network
 
 ---
 
-## 📶 RSSI Signal Strength
+## RSSI Signal Strength
 
 RSSI shows the WiFi signal strength.
 
@@ -366,7 +366,7 @@ For example:
 
 ---
 
-## 🚀 How to Run the Raspberry Pi Server
+## How to Run the Raspberry Pi Server
 
 Go to the server folder:
 
@@ -394,7 +394,7 @@ http://192.168.1.100
 
 ---
 
-## 📤 GitHub Upload Commands
+## GitHub Upload Commands
 
 From the main project folder:
 
@@ -422,7 +422,7 @@ git push origin main
 
 ---
 
-## 💡 Future Improvements
+## Future Improvements
 
 Possible improvements for the project:
 
@@ -447,7 +447,7 @@ Possible improvements for the project:
 
 ---
 
-## 🎓 Educational Purpose
+## Educational Purpose
 
 This project was created for learning and demonstration purposes.
 
@@ -466,7 +466,7 @@ It combines:
 
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 - Embedded systems programming
 - ESP32 WiFi networking
@@ -485,7 +485,7 @@ It combines:
 
 ---
 
-## 👨‍💻 Credits
+## ‍ Credits
 
 Developed as an educational IoT project using:
 
@@ -497,7 +497,7 @@ Developed as an educational IoT project using:
 
 ---
 
-## 📄 License
+## License
 
 This project is for educational use.
 
